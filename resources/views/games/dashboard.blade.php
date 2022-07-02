@@ -26,11 +26,13 @@
                     <td><a href="/games/{{$game->id}}">{{$game->title}}</a></td>
                     <td>{{count($game->users)}}</td>
                     <td><a href="/games/edit/{{$game->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a></td>
+                    <td>
                     <form action="/games/{{ $game->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
                     </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
